@@ -34,5 +34,5 @@ df, result = srl_model.get_predictions(sentence.strip())
 df.columns = [args2meaning_map.get(item) for item in df.columns.tolist()]
 df = df.iloc[:, :-2]
 st.write(df)
-st.write(df.to_dict())
+st.write(df.to_dict(orient='records'))
 
