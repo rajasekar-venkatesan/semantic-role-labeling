@@ -33,6 +33,8 @@ df, result = srl_model.get_predictions(sentence.strip())
 # df.columns = args2meaning_map.values()
 df.columns = [args2meaning_map.get(item) for item in df.columns.tolist()]
 df = df.iloc[:, :-2]
-st.write(df)
-st.write(df.to_dict(orient='records'))
+# st.write(df)
+result = df.to_dict(orient='records')
+result = [{k: v for k, v in item.items() if v} for item in result]
+st.write(result)
 
