@@ -32,5 +32,7 @@ sentence = st.text_area("Enter Text:", "Rajasekar built this tool to understand 
 df, result = srl_model.get_predictions(sentence.strip())
 # df.columns = args2meaning_map.values()
 df.columns = [args2meaning_map.get(item) for item in df.columns.tolist()]
+df = df.iloc[:, :-2]
 st.write(df)
+st.write(df.to_dict())
 
