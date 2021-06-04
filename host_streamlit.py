@@ -28,7 +28,7 @@ args2meaning_map = {'ARG0': 'Causer',
                     'SENTENCE': 'Sentence', 
                     'INDEX': 'Sentence Index'}
 
-sentence = st.text_area("Enter Text:", "Rajasekar built this tool to understand the segments of the text. Using this, we can gain some insights from the data.")
+sentence = st.text_area("Enter Text:", "My SQ experience is bad because the flight was delayed by 2 hours.")
 df, result = srl_model.get_predictions(sentence.strip())
 # df.columns = args2meaning_map.values()
 df.columns = [args2meaning_map.get(item) for item in df.columns.tolist()]
